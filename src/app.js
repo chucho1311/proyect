@@ -4,7 +4,6 @@ import restaurantRoutes from "./restaurants/restaurantsRoutes.js"
 import cors from "cors";
 
 const app = express()
-Headers
 app.use(express.json())
 app.use(cors({
     origin: whiteList

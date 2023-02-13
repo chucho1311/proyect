@@ -6,7 +6,7 @@ import cors from "cors";
 const app = express()
 app.use(express.json())
 app.use(cors({
-    origin: whiteList
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
 }))
 
 app.use("/api/v1", usersRoutes)

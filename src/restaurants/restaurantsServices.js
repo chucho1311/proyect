@@ -6,12 +6,12 @@ const getBucaramangaRestaurants = async (req, res) => {
 }
 
 const getFloridaRestaurants = async (req, res) => {
-    const users = await restaurantsController.getFloridaRestaurants;
+    const users = await restaurantsController.getFloridaRestaurants();
     res.status(200).json(users)
 }
 
 const getGironRestaurants = async (req, res) => {
-    const users = await restaurantsController.getGironRestaurants;
+    const users = await restaurantsController.getGironRestaurants();
     res.status(200).json(users)
 }
 

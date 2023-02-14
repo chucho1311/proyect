@@ -5,11 +5,11 @@ const router = Router();
 
 router
     //? https://proyect-production.up.railway.app/api/v1/users
-    .get('/users', usersServices.getAllUsers)
+    .get('/users',cors({credentials: true, origin: '*'}), usersServices.getAllUsers)
     //? https://proyect-production.up.railway.app/api/v1/users/1
-    .get('/users/:id', usersServices.getUserById)
-    .post('/users',usersServices.createUser)
-    .patch('/users/:id', usersServices.updateUser)
-    .delete('/users/:id', usersServices.deleteUser)
+    .get('/users/:id',cors({credentials: true, origin: '*'}), usersServices.getUserById)
+    .post('/users',cors({credentials: true, origin: '*'}),usersServices.createUser)
+    .patch('/users/:id',cors({credentials: true, origin: '*'}), usersServices.updateUser)
+    .delete('/users/:id',cors({credentials: true, origin: '*'}), usersServices.deleteUser)
 
 export default router;

@@ -5,7 +5,7 @@ import cors from "cors";
 
 const app = express()
 
-app.use(cors({ credentials: true, origin: 'https://la-miapizza.netlify.app/', crossorigin: true }));
+app.use(cors({ credentials: true, origin: 'https://la-miapizza.netlify.app/' }));
 app.use(express.json())
 app.use( (req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");

@@ -8,14 +8,8 @@ const app = express()
 app.use(cors({credentials: true, origin: 'http://localhost:5003'}));
 app.use(express.json())
 
-app.use("/api/v1",cors({
-    origin: "*",
-    methods: "GET,PUT,PATCH,POST,DELETE"
-}), usersRoutes)
-app.use("/api/v1",cors({
-    origin: "*",
-    methods: "GET,PUT,PATCH,POST,DELETE"
-}), restaurantRoutes)
+app.use("/api/v1", usersRoutes)
+app.use("/api/v1", restaurantRoutes)
 // app.get('/', async (req,res) => {
 //     const result =await pool.query('SELECT 1 + 1 AS result')
 //     res.send(result)

@@ -3,6 +3,7 @@ import usersControllers from "./usersControllers.js";
 
 const getAllUsers = async (req, res) => {
     const users = await usersControllers.getAllUsers();
+    res.header("Access-Control-Allow-Origin", "*");
     res.status(200).json(users)
 }
 

@@ -8,7 +8,7 @@ const app = express()
 app.use(cors({credentials: true, origin: '*'}));
 app.use(express.json())
 
-app.use("/api/v1", usersRoutes)
+app.use("/api/v1",cors({credentials: true, origin: '*'}), usersRoutes)
 app.use("/api/v1", restaurantRoutes)
 // app.get('/', async (req,res) => {
 //     const result =await pool.query('SELECT 1 + 1 AS result')

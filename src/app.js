@@ -4,10 +4,8 @@ import restaurantRoutes from "./restaurants/restaurantsRoutes.js"
 import cors from "cors";
 
 const app = express()
-app.use(cors({
-    origin: "*",
-    methods: "GET,PUT,PATCH,POST,DELETE"
-}))
+
+app.use(cors({credentials: true, origin: 'http://localhost:5003'}));
 app.use(express.json())
 
 app.use("/api/v1",cors({

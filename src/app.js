@@ -10,8 +10,14 @@ app.use(cors({
 }))
 app.use(express.json())
 
-app.use("/api/v1",cors(), usersRoutes)
-app.use("/api/v1",cors(), restaurantRoutes)
+app.use("/api/v1",cors({
+    origin: "*",
+    methods: "GET,PUT,PATCH,POST,DELETE"
+}), usersRoutes)
+app.use("/api/v1",cors({
+    origin: "*",
+    methods: "GET,PUT,PATCH,POST,DELETE"
+}), restaurantRoutes)
 // app.get('/', async (req,res) => {
 //     const result =await pool.query('SELECT 1 + 1 AS result')
 //     res.send(result)

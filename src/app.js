@@ -5,13 +5,13 @@ import cors from "cors";
 
 const app = express()
 
-app.use(cors({ credentials: true, origin: 'https://la-miapizza.netlify.app/' }));
+app.use(cors());
 app.use(express.json())
-app.use( (req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Accept");
-    next();
-});
+// app.use( (req, res, next) => {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Headers", "Accept");
+//     next();
+// });
 app.use("/api/v1",cors({ credentials: true, origin: 'https://la-miapizza.netlify.app/users' }), usersRoutes)
 app.use("/api/v1", restaurantRoutes)
 // app.get('/', async (req,res) => {

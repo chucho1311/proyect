@@ -12,7 +12,7 @@ app.use( (req, res, next) => {
     res.header("Access-Control-Allow-Headers", "Accept");
     next();
 });
-app.use("/api/v1", usersRoutes)
+app.use("/api/v1",cors({ credentials: true, origin: 'https://la-miapizza.netlify.app/users' }), usersRoutes)
 app.use("/api/v1", restaurantRoutes)
 // app.get('/', async (req,res) => {
 //     const result =await pool.query('SELECT 1 + 1 AS result')
